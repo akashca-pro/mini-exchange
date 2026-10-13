@@ -16,7 +16,7 @@ Akash · master · covers the whole repo
 | Repo | First commit `91223b8` pushed to `akashca-pro/mini-exchange`. Every green slice goes straight to `main` (decision #25) |
 | Decisions | #5–#12 are Claude's proposals until Akash confirms them, except #10 (superseded by #18) and #11 (superseded by #25) |
 | Hard rules | H1 and H2 in [CLAUDE.md](../../../CLAUDE.md) are enforced by the guard, verified in a fresh session ([bug project](../2026-10-13_bug-guard-not-firing/README.md)) |
-| Git identity | The personal identity, SSH deploy key and personal git hooks are verified in a real commit and push (decisions #16–#20) |
+| Git identity | The personal identity, SSH deploy key and personal git hooks are verified in a real commit and push (decisions #16–#20). Akash is the only commit author: Claude Code's attribution is off, and a `commit-msg` hook refuses any message crediting someone else (decisions #26–#27) |
 
 ## Roadmap
 

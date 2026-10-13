@@ -18,11 +18,12 @@ Changing the guard, `.claude/settings.json` or `.claude/hard-rules.local.json` i
 1. **Design before code.** No code in a project until Akash has approved its design ([RB-001](runbook/procedures/RB-001-deliver-a-project.md) Steps 2–3). Claude drafts the design; Akash approves it or asks for changes.
 2. **Small slices.** One slice covers one change, about 150 changed lines or fewer plus tests, and ends green and committed straight to `main` (decision #25). That keeps "go back to the last green commit" to a single command.
 3. **Akash approves every commit message** before the commit is made (RB-001 Step 6).
-4. **Never touch TPP.** This is hard rule H1 above, enforced by the guard.
-5. **Integers for money and prices** (cents and ticks), never floats (decision #6).
-6. **Append, don't rewrite.** `decisions.md` and `changelog.md` are append-only. A reversal adds a new row that says which one it supersedes.
-7. **Never infer.** State only what's verified. Mark anything unverified once, as a blockquote: `> [CONFIRM] <what's unverified>`.
-8. **The runbook beats generic skills.** RB-001 and these rules win over any plugin skill whose advice differs. Designs go in the project's `design.md` and slice plans in its `progress.md`, in this runbook's format. Don't use `executing-plans` or `subagent-driven-development` to build several slices without Akash approving each commit (rules 2 and 3).
+4. **Akash is the only author.** Every commit's author and committer is Akash's personal identity (hard rule H2), never Claude. Commit messages never credit Claude: no `Co-Authored-By` trailer, no "Generated with Claude Code" line, no session link. The same goes for any pull request text Claude drafts (decision #26). Enforced by Claude Code's `attribution` setting in `.claude/settings.json` and the personal `commit-msg` hook in `~/.githooks-personal/` (decision #27).
+5. **Never touch TPP.** This is hard rule H1 above, enforced by the guard.
+6. **Integers for money and prices** (cents and ticks), never floats (decision #6).
+7. **Append, don't rewrite.** `decisions.md` and `changelog.md` are append-only. A reversal adds a new row that says which one it supersedes.
+8. **Never infer.** State only what's verified. Mark anything unverified once, as a blockquote: `> [CONFIRM] <what's unverified>`.
+9. **The runbook beats generic skills.** RB-001 and these rules win over any plugin skill whose advice differs. Designs go in the project's `design.md` and slice plans in its `progress.md`, in this runbook's format. Don't use `executing-plans` or `subagent-driven-development` to build several slices without Akash approving each commit (rules 2 and 3).
 
 ## When you make progress, edit the right file
 
