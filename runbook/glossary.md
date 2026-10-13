@@ -1,6 +1,17 @@
 # Glossary
 
-Plain-English meanings as used in this project. When a phase introduces a term, add it here.
+Plain-English meanings as used in this project. When a project introduces a term, add it here.
+
+## How we work
+
+| Term | Meaning |
+|---|---|
+| Project | One unit of work (a phase, feature, bug or research question) with its own dated folder under `runbook/projects/` |
+| Master project (`00-master`) | The one project that never closes. It holds the overall status, the roadmap and the index of every other project |
+| Phase | One step of the P0–P7 roadmap. Each phase is delivered as one project |
+| Slice | One small change inside a project: about 150 changed lines or fewer plus tests, ending green and committed |
+| Green | Every test, lint and type check passes |
+| Exit gate | The checks a phase must pass before the next phase starts. The roadmap lists them |
 
 ## Trading terms
 

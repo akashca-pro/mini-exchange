@@ -1,6 +1,6 @@
 # Project rules — mini-exchange
 
-This is a learning project. Akash owns the designs and has to understand them; Claude implements and teaches. Code, infrastructure and runbook live in this one repo ([decision #13](runbook/decisions.md)). Start with [README.md](README.md) to see where things stand.
+mini-exchange is a small stock exchange in Python and FastAPI. Akash owns it: Akash sets priorities and approves every design, slice plan and commit. Claude drafts the designs, writes the code and keeps the runbook current ([decision #23](runbook/decisions.md)). Code, infrastructure and runbook live in this one repo ([decision #13](runbook/decisions.md)). Work runs as projects: [00-master](runbook/projects/00-master/README.md) holds the overall state, and every phase, feature, bug or research question gets its own folder under [runbook/projects/](runbook/projects/README.md) ([decision #24](runbook/decisions.md)). Start with 00-master to see where things stand.
 
 ## Hard rules
 
@@ -15,15 +15,14 @@ Changing the guard, `.claude/settings.json` or `.claude/hard-rules.local.json` i
 
 ## Rules
 
-1. **Teach, don't just deliver.** For every slice, explain in plain words what each part does, why it has this shape, what the alternative was and why we didn't take it, and which concept it shows (for example, "this is the single-writer principle"). Akash is new to Python, so explain Python idioms the first time they appear.
-2. **Design before code.** No phase code until Akash's phase design has been reviewed ([RB-001](runbook/procedures/RB-001-build-a-phase.md) Steps 3–4). Claude reviews the design and can explain concepts, but does not write Akash's design.
-3. **Small slices.** One slice covers one concept, about 150 changed lines or fewer plus tests, and ends green and committed. That keeps "go back to the last green commit" to a single command.
-4. **Drills belong to Akash.** During a drill ([RB-002](runbook/procedures/RB-002-run-a-debug-drill.md)), give hints only when asked, one ladder level at a time. Never fix the planted fault, and never merge a `drill/*` branch.
-5. **Never touch TPP.** This is hard rule H1 above, enforced by the guard.
-6. **Integers for money and prices** (cents and ticks), never floats (decision #6).
-7. **Append, don't rewrite.** `decisions.md`, `changelog.md` and drill reports are append-only. A reversal adds a new row that says which one it supersedes.
-8. **Never infer.** State only what's verified. Mark anything unverified once, as a blockquote: `> [CONFIRM] <what's unverified>`.
-9. **The runbook beats generic skills.** RB-001, RB-002 and these rules win over any plugin skill whose advice differs. Don't use `superpowers:brainstorming` or `superpowers:writing-plans` to write a phase design (rule 2). Don't use `executing-plans` or `subagent-driven-development` to build several slices without the predict and teach-back steps (rule 3). Never let `finishing-a-development-branch` merge a `drill/*` branch (rule 4).
+1. **Design before code.** No code in a project until Akash has approved its design ([RB-001](runbook/procedures/RB-001-deliver-a-project.md) Steps 2–3). Claude drafts the design; Akash approves it or asks for changes.
+2. **Small slices.** One slice covers one change, about 150 changed lines or fewer plus tests, and ends green and committed straight to `main` (decision #25). That keeps "go back to the last green commit" to a single command.
+3. **Akash approves every commit message** before the commit is made (RB-001 Step 6).
+4. **Never touch TPP.** This is hard rule H1 above, enforced by the guard.
+5. **Integers for money and prices** (cents and ticks), never floats (decision #6).
+6. **Append, don't rewrite.** `decisions.md` and `changelog.md` are append-only. A reversal adds a new row that says which one it supersedes.
+7. **Never infer.** State only what's verified. Mark anything unverified once, as a blockquote: `> [CONFIRM] <what's unverified>`.
+8. **The runbook beats generic skills.** RB-001 and these rules win over any plugin skill whose advice differs. Designs go in the project's `design.md` and slice plans in its `progress.md`, in this runbook's format. Don't use `executing-plans` or `subagent-driven-development` to build several slices without Akash approving each commit (rules 2 and 3).
 
 ## When you make progress, edit the right file
 
@@ -31,15 +30,14 @@ Akash wants the runbook updated as work happens, not batched at the end.
 
 | When… | Update |
 |---|---|
-| A phase, feature, research question or bug starts | New folder under `runbook/work/` ([work/README.md](runbook/work/README.md)) and its row in that index |
-| A phase starts or finishes | [plan.md](runbook/plan.md) status table |
-| A slice finishes | The work folder's `progress.md` |
-| Akash explains a slice back | The work folder's `teach-back.md` |
-| A drill finishes | The work folder's `drills/<name>.md` |
+| A phase, feature, bug or research question starts | New folder under `runbook/projects/` ([projects/README.md](runbook/projects/README.md)) and its row in the 00-master **Projects** index |
+| A project's status changes | Its README **Status** and its row in the 00-master **Projects** index |
+| A phase starts or finishes | The 00-master **Roadmap** table |
+| A slice finishes | The project's `progress.md` |
 | A decision is made or reversed | [decisions.md](runbook/decisions.md), appended with date and source |
 | The architecture changes | [design.md](runbook/design.md) |
 | A new command exists | **Commands** below |
-| Status changes | [README.md](README.md) **Status**, plus a dated entry in [changelog.md](runbook/changelog.md) |
+| The overall state changes | The 00-master **Status** and **Next**, plus a dated entry in [changelog.md](runbook/changelog.md) |
 
 ## Executor tags
 
@@ -60,7 +58,7 @@ Same style as the TPP runbook (`tpp/runbook/CLAUDE.md`, section "Doc Authoring")
 - Use tables for parallel facts, and prose for reasoning, sequence and cause.
 - State each fact once, and have other files link to it.
 - Explain a term at its first use in each file, or link [glossary.md](runbook/glossary.md).
-- Write plain English. Akash is learning, so a sentence a beginner can't follow counts as a bug.
+- Write plain English. A sentence a newcomer can't follow counts as a bug.
 
 ## Commands
 

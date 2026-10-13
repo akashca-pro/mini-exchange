@@ -1,6 +1,6 @@
-# P{N} design — {phase name}
+# {Project} design
 
-> Written by Akash before any code exists ([RB-001](../procedures/RB-001-build-a-phase.md), Step 3). Claude reviews it in the **Review** table, and Akash revises. Time-box: two hours. Write it badly rather than not at all.
+> Drafted by Claude and approved by Akash before any code exists ([RB-001](../../procedures/RB-001-deliver-a-project.md), Steps 2–3). The **Approval** table at the bottom records each round.
 
 ## Problem
 
@@ -8,7 +8,7 @@
 
 ## Requirements covered
 
-| ID | Requirement, invariant or target (from requirements.md) | How I'll prove it |
+| ID | Requirement, invariant or target (from requirements.md) | How it's proven |
 |---|---|---|
 | FR-{x} | | {test name, or the measurement to take} |
 | I{x} | | |
@@ -37,9 +37,9 @@ At least three.
 |---|---|---|
 | | | |
 
-## Answers to this phase's open questions
+## Answers to the open questions
 
-{Each Q{N}.x from design.md, answered, or marked "don't know, because…".}
+{Phase projects: each Q{N}.x that design.md lists for this phase, answered.}
 
 ## Alternatives considered
 
@@ -47,16 +47,12 @@ At least three.
 |---|---|
 | | |
 
-## My open questions
+## Still open
 
-{What you're unsure about. These become E1 questions or research notes.}
+{Anything unverified, each marked [CONFIRM] with how it will be settled. Settle these before approval, or say why they can wait.}
 
-## Hand-written piece
+## Approval
 
-{Which part you'll write yourself. plan.md names it; add detail here.}
-
-## Review (Claude)
-
-| # | Severity (blocking / important / learning) | Finding | Akash's response |
+| Round | Date | Akash's answer | Changes requested |
 |---|---|---|---|
-| 1 | | | |
+| 1 | | {approved / changes requested} | |

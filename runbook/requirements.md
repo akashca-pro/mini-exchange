@@ -1,22 +1,6 @@
 # Requirements
 
-This file covers what the project has to achieve, what the exchange must do, and how we'll know. The phase numbers (P0–P7) say when each requirement arrives, and [plan.md](plan.md) holds the phase order and gates. Each phase's work-folder design cites requirements by ID, such as `FR-3` or `I2`.
-
-## Learning outcomes
-
-The project succeeds when Akash can do these without Claude. The exchange working is required, but on its own it isn't enough.
-
-| ID | Akash can… | Evidence | Phases |
-|---|---|---|---|
-| LO1 | Read, write and debug async Python services built on FastAPI | Hand-written piece in every phase passes review | all |
-| LO2 | Pick between a single writer, locks, database transactions and partitioning for a given contention problem, and defend the choice | P1, P2 and P5 designs and drills | P1, P2, P5 |
-| LO3 | Design a live data feed with fan-out, backpressure and gap recovery | P3 design and drills | P3 |
-| LO4 | Make in-memory state survive crashes, using event sourcing, snapshots and deterministic replay | P4 crash tests | P4 |
-| LO5 | Reason about partitioning, ordering, delivery guarantees, idempotent consumers and the outbox pattern | P5 design, drills and ADR | P5 |
-| LO6 | Estimate capacity, load test, profile, and fix the actual bottleneck | P6 performance report | P6 |
-| LO7 | Make a system survive faults (timeouts, retries, circuit breakers, rate limits) and run it on AWS from code | P7 drills and deploy | P7 |
-| LO8 | Find a root cause methodically, using fewer hints over time | Hint scores across all drill reports | all |
-| LO9 | Explain an architecture and its trade-offs: written designs, ADRs, and a 30-minute whiteboard walkthrough of the exchange including failure modes | Final walkthrough at P7 exit | all |
+This file covers what the exchange must do and how we'll know. The phase numbers (P0–P7) say when each requirement arrives, and the [roadmap](projects/00-master/roadmap.md) holds the phase order and exit gates. Each project's design cites requirements by ID, such as `FR-3` or `I2`.
 
 ## Functional requirements
 
@@ -57,7 +41,7 @@ These must never be false. Property-based tests (Hypothesis) generate thousands 
 
 ## Performance and operational targets
 
-The numbers are first guesses. The first real measurement replaces each guess, and comparing guess to measurement is part of LO6. Every target is measured on this laptop until P7.
+The numbers are first guesses. The first real measurement replaces each guess. Every target is measured on this laptop until P7.
 
 | ID | Target | Phase |
 |---|---|---|
@@ -74,7 +58,7 @@ The numbers are first guesses. The first real measurement replaces each guess, a
 - Everything runs on one Windows 11 laptop with Docker Desktop until P7.
 - The language is Python with FastAPI (decision #2).
 - Only fake money and generated orders. No real market data, brokers or regulation.
-- The cloud is a personal AWS account only, never a TPP account or profile ([CLAUDE.md](../CLAUDE.md) rule 5).
+- The cloud is a personal AWS account only, never a TPP account or profile (hard rule H1 in [CLAUDE.md](../CLAUDE.md)).
 
 ## Out of scope
 

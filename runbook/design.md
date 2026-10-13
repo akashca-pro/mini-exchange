@@ -1,6 +1,6 @@
 # Design
 
-How the exchange works at its target shape, and how it gets there phase by phase. This file holds the architecture. Each phase's detailed design is Akash's one-pager in its work folder, which links back here. The open questions at the bottom are left open on purpose, because answering them is the phase design's job.
+How the exchange works at its target shape, and how it gets there phase by phase. This file holds the architecture. Each phase's detailed design is the `design.md` in its project folder, drafted by Claude and approved by Akash, and it links back here. The open questions at the bottom are left open on purpose, because answering them is the phase design's job.
 
 ## Target architecture
 
@@ -111,7 +111,7 @@ Example: Alice buys 10 AAPL at $150.00 from Bob. Amounts are in cents and shares
 
 ## Open questions for the phase designs
 
-Each phase design answers its own set, or says "don't know, because…". A wrong answer that gets reviewed teaches more than a blank.
+Each phase design answers its own set before Akash approves it. A question that needs investigating first gets a `research-` project ([RB-001](procedures/RB-001-deliver-a-project.md) Step 2).
 
 **P1**
 
