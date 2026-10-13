@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.hypothesis/
+.coverage
+htmlcov/
+
+# Local config and secrets
+.env
+*.local
+# Claude Code: personal settings, and the hard-rule config holding work account IDs
+.claude/*.local.json
+
+# Runtime data (event logs and snapshots, from P4)
+data/
+*.log
+
+# Terraform (P7). State can hold secrets, and it never goes in git
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfplan
+
+# Editors and OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

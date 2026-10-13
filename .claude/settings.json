@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "deny": [
+      "mcp__atlassian__*",
+      "mcp__claude_ai_Atlassian_MCP__*"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "shell": "powershell",
+            "command": "python \"$env:CLAUDE_PROJECT_DIR/.claude/hooks/guard.py\"; if ($LASTEXITCODE -eq 0) { exit 0 } else { exit 2 }",
+            "timeout": 10,
+            "statusMessage": "Checking hard rules"
+          }
+        ]
+      }
+    ]
+  }
+}
